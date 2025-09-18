@@ -527,6 +527,50 @@
             margin-bottom: 8px;
         }
         
+        /* 微信二维码样式 */
+        .wechat-qr-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .wechat-qr-code {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            z-index: 1000;
+        }
+        
+        .wechat-qr-code:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-top-color: white;
+        }
+        
+        .wechat-qr-container:hover .wechat-qr-code {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .wechat-qr-code img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         /* 页脚样式 */
         footer {
             background-color: var(--dark);
@@ -682,6 +726,12 @@
             
             .team-members {
                 grid-template-columns: 1fr 1fr;
+            }
+            
+            /* 移动端二维码调整 */
+            .wechat-qr-code {
+                width: 120px;
+                left: -40px;
             }
         }
         
@@ -936,7 +986,7 @@
                             </div>
                             <div>
                                 <h3>电话</h3>
-                                <p>+86 187 1060 7787</p>
+                                <p>+86 18710607787</p>
                             </div>
                         </div>
                         <div class="contact-detail">
@@ -971,11 +1021,28 @@
                     <h3>PixelPulse Studio</h3>
                     <p>提供专业的软件开发服务，帮助客户将创意转化为成功的数字产品。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                    </div>
+                        <a href=""><i class="fab fa-github"></i></a>
+                        
+                        <!-- 修改微信图标部分，添加二维码 -->
+                        <div class="wechat-qr-container">
+                            <a href="#"><i class="fab fa-weixin"></i></a>
+                            <div class="wechat-qr-code">
+                                <img src="weixin.png" alt="微信二维码">
+                                <p style="text-align: center; margin-top: 5px; color: #333; font-size: 12px;">扫码添加微信</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://weibo.com/" target="_blank"><i class="fab fa-weibo"></i></a>
+
+						<div class="wechat-qr-container">
+                            <a href="#"><i class="fab fa-qq"></i></a>
+                            <div class="wechat-qr-code">
+                                <img src="QQ.png" alt="QQ二维码">
+                                <p style="text-align: center; margin-top: 5px; color: #333; font-size: 12px;">扫码添加QQ</p>
+                            </div>
+                        </div>
+
+                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>服务</h3>
@@ -994,14 +1061,14 @@
                         <li><a href="#services">服务</a></li>
                         <li><a href="#portfolio">作品集</a></li>
                         <li><a href="#about">关于我们</a></li>
-                        <li><a href="#contact">联系</a></li>
+                        <li><a href="#contact">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>联系信息</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> 891503392@qq.com</li>
-                        <li><i class="fas fa-phone"></i> +86 187 1060 7787</li>
+                        <li><i class="fas fa-phone"></i> +86 18710607787</li>
                         <li><i class="fas fa-map-marker-alt"></i> 中国，西安市高新技术开发区</li>
                     </ul>
                 </div>
